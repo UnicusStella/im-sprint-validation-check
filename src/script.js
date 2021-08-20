@@ -30,10 +30,25 @@ elInputUsername.onkeyup = function () {
   }
 };
 
+elPasswordRetype.onkeyup = function () {
+  if (isMatch(elInputPassword.value, elPasswordRetype.value)) {
+    elSuccessPassword.classList.add('hide');
+  } else {
+    elSuccessPassword.classList.remove('hide');
+  }
+};
+
 function isMoreThan4Length(value) {
   // TODO : 동영상 강의를 보고 이 함수를 완성하세요.
+
+  return value.length >= 4;
 }
 
 function isMatch(password1, password2) {
   // TODO : 동영상 강의를 보고 이 함수를 완성하세요.
+  if (password1 === password2) {
+    return true;
+  } else {
+    return false;
+  }
 }
