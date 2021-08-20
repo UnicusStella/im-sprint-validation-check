@@ -15,27 +15,22 @@ let elPasswordRetype = document.querySelector('#password-retype');
 let elSuccessPassword = document.querySelector('.mismatch-message');
 
 elInputUsername.onkeyup = function () {
-  if (isMoreThan4Length(elInputUsername.value)) {
+  if (isMoreThan4Length(elInputUsername.value))
     // 성공 메시지가 보입니다.
-    elSuccessMessage.classList.remove('hide');
-
-    // 실패 메시지가 가려져야 함
-    elFailureeMessage.classList.add('hide');
-  } else {
-    // 성공 메시지가 가려집니다.
-    elSuccessMessage.classList.add('hide');
-
-    //실패 메시지가 보여야함
-    elFailureeMessage.classList.remove('hide');
-  }
+    elSuccessMessage.classList.remove('hide'),
+      // 실패 메시지가 가려져야 함
+      elFailureeMessage.classList.add('hide');
+  // 성공 메시지가 가려집니다.
+  else
+    elSuccessMessage.classList.add('hide'),
+      //실패 메시지가 보여야함
+      elFailureeMessage.classList.remove('hide');
 };
 
 elPasswordRetype.onkeyup = function () {
-  if (isMatch(elInputPassword.value, elPasswordRetype.value)) {
+  if (isMatch(elInputPassword.value, elPasswordRetype.value))
     elSuccessPassword.classList.add('hide');
-  } else {
-    elSuccessPassword.classList.remove('hide');
-  }
+  else elSuccessPassword.classList.remove('hide');
 };
 
 function isMoreThan4Length(value) {
@@ -46,9 +41,7 @@ function isMoreThan4Length(value) {
 
 function isMatch(password1, password2) {
   // TODO : 동영상 강의를 보고 이 함수를 완성하세요.
-  if (password1 === password2) {
-    return true;
-  } else {
-    return false;
-  }
+
+  if (password1 === password2) return true;
+  else return false;
 }
